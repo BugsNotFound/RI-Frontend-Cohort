@@ -1,0 +1,526 @@
+Day 1:
+=====================
+
+	Every webpage is made up of HTML.  HTML stands for "Hypertext markup language"
+
+	All the HTML files have the extension of .html.
+
+	To write the HTML you'll need a text editor.
+	I'll be using sublime text.
+
+	Some famous text editors (IDE's) are:
+	notepad, 
+	notepad++,
+	sublime text (will be used in this course), -> https://www.sublimetext.com/3
+	vscode etc
+
+
+
+	We'll be using codecademy to proceed with our HTML lessons:
+	https://www.codecademy.com/courses/learn-html/lessons/intro-to-html/exercises/intro
+
+
+
+	Opening tag example: <p>
+	Closing tag: </p>
+	All the closing tags have a '/'. 
+
+
+
+	<body> tag:
+		All the content written between the body tag is shown in the webpage. 
+
+	Writing presentational tags (p, h1, h2..etc) outside the body tag is illegal. 
+
+
+
+	Heading tag:
+		We have 6 types of headings. h1 to h6. h1 is the largest heading, and h6 is the smallest heading. 
+
+
+
+	Div tag: 
+		Div stands for 'division'. It's a container tag. 
+		We can wrap any element within the div tag. 
+
+
+	Attributes:
+		Attributes are properties that can be added to tags.. 	
+		eg: <p id="value">hey there</p>
+			<p class="anyValuehere">Hey there</p>
+
+		'id':	
+			No tag in a HTML document can have the same value of the 'id' attribute. 
+
+		'class':
+			We can have same value of the 'class' attribute in multiple tags.
+		'src':
+			It's a attribute that is given the the <img /> tag. It means source. 
+
+
+
+
+	Homework: : https://www.codecademy.com/courses/learn-html
+	Finish the entire HTML tutorial on codecademy.
+
+
+Day 2:
+=====================
+	Attributes:
+		<TagName attributeName="attributeValue">
+		</TagName>
+	eg of attributes: id, class, style ..etc
+
+
+	<span> tag:
+		Basically this tag is similar to the <div> tag. The difference is that it's a inline tag, whereas div is a block level tag. 
+		We'll discuss the meaning of 'inline' and 'block' level tags in the CSS class. 
+
+
+
+	<em> tag:
+		This tag is used for emphasizing the text which is wrapped under it. 
+
+	<strong> tag
+
+	<u> tag
+
+	Attributes are key-value pair.
+
+
+
+	Whitespace:
+		All the empty lines, or spaces in a document is called 'whitespace'. 
+		HTML ignores whitespace.
+
+	So what if we want to add a new line between content.
+
+
+	Self enclosing tags:
+		So far we have seen tags whicch have opening tag and closing tag (eg: <p> </p>). 
+		But there are tags which are self enclosing. They don't need the closing tag. 
+			eg: <br />, <hr />, <link />, <img />
+
+		Another way of writing self enclosing tag is: 
+			<br>, <hr>...etc
+
+
+	<br />
+		This adds a empty line to the webpage.
+
+
+	Lists in HTML:
+		There are 2 types of list: unordered list, or a ordered list.
+
+		Unordered list:
+			Tag name: <ul>
+			Within the ul tag, we add list items  (<li> tag)
+
+		Ordered List:
+			Tag name: <ol>
+			Within the ul tag, we add list items  (<li> tag)
+
+
+		<li> tag doesn't decide the decoration of the list item. The decoration is decided by <ul> or <ol> 
+		If the <li> tag is inside <ul> then the list will be bullet points (unordered)
+		If the <li> tag is inside <ol> then the list will be numbered (ordered)
+
+
+
+
+
+	Images in HTML:
+		<img src="" />
+		We can either add a relative path within "src", or we can add a absolute path. 
+
+		We can provide 'alt' attribute to the image tag. 
+		'alt' stands for 'alternative' ... 
+		In case when the image can't be located (i.e the path is invalid), then we can use the 'alt' tag to display a fallback text instead of the ugly looking "IMage not found" icon.
+
+		The people who are visually impaired (blind), they use screen-readers to read out a webpage. So for them, the screen readers speaks out the 'alt' text of a image whenever a image tag is encountered.. 
+
+
+	Video tag:
+		<video src="myVideo.mp4" width="320" height="240" controls>
+	  		Video not supported (this is the fallback text incase the video is not supported by the browser)
+		</video>
+
+
+	Relative Paths:
+		Relative path is relative to the current directory in which the HTML file is present. 
+		./ -> This means that look inside the same directory
+		../ -> Go one level up ... 
+		../../ -> Go two levels up... 
+
+
+
+	Absolute Paths:
+		We can also provide absolute path within the 'src' attribute. 
+		Usually we use absolute paths while giving the link of a image from web...
+
+
+
+	Anchor tag:
+		<a>:
+			This denotes hyperlink.
+			We can add the url of the linked page insde the 'href' attribute. 
+
+
+
+
+
+	===
+	Document type definition: This basically denotes what type of document are we working on... 
+
+	Document type declaration: This declaration has to be added on top of the HTML page to tell the browser about the Document type definition of the html we are writing...
+
+		HTML 4.0: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+		HTML 5: <!DOCTYPE HTML> 
+
+		Note: <!DOCTYPE HTML> => This basically refers to the latest version of HTML. Since HTML 5 is the latest version, it denotes HTML 5..
+
+
+
+
+	HTML -> HTML 4.0, XHTML, HTML 5 ...etc
+		HTML 5 is the latest version...
+
+
+
+Day 3:
+=====================
+CSS: Cascading style sheet. 
+Basically, it's used to add styling to our plain old web pages. 
+
+There are multiple ways to add CSS to a webpage.
+	-inline
+	-Internal style sheet
+	-External style sheet
+
+CSS Selector: In CSS, selectors are patterns used to select the element(s) you want to style.
+	h1 {
+		//some styling here..
+	}
+
+	This style will apply to all h1 tags.
+
+	h1, p {
+		// some styling here
+	}
+
+	This style will apply to all the h1 and p tags..
+
+	#someId {
+		// some styling here
+	}
+
+	This style will apply to the tag which has a id of 'someId'
+
+	.someClass {
+		//some styling here
+	}
+	This style will apply to all the tags which have the class of 'someClass'
+
+	We can separate selectors by comma also. 
+
+	Example of some CSS selectors: 	
+		h1 -> The style will be applied to all the h1 tags
+			h1 {
+				//some style here
+			}
+		.someClass -> The style will be applied to the element having class of "someClass"
+		#someId -> This style will be applied to the element having id "someId"
+		h1, p -> The style will be applied to all the h1 and p tags.
+			h1, p {
+				//some style here..
+			}
+
+		* -> This is the universal selector. The styles added to this applied to all the elements of the webpage...
+
+		We can separate selectors by 'comma' and apply same common styles to them.
+
+
+		We can give multiple classes to the same element (separating them by space)
+
+
+	cssSelector[attributeName=<attributeValue>]
+
+	After each session, make sure to repeat these exercises on your own (on codecademy). Otherwise you'll forget..
+
+
+Day 4:
+================
+
+	Specificity: 
+		id has more specificity than tag selector. 
+		It's very important to know which selector will be given more preference. 
+
+		id > class > type
+	eg: #para > .para > p
+
+		There are many advance ways to get the specificty of a selector. 
+		https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+
+	If we add '!important' after any rule, it'll override all other styles irrespective of the specificity.
+
+
+	Chaining:
+		h2.someClass => This will select all the h2's having class 'someClass'
+		h2#someId => This will select the h2 having id 'someId' (this is trivial because id is unique to each element)
+				     This is as good as #someId 
+
+    Descendant Combinator
+    	ul li 
+
+    The more specific a selector is (eg: 'div p' is more specific than 'p'), the more preference that style will have. 
+    We can use comma (,) to separate selectors and appply common styling to them.
+
+    Box model -> 
+    	inline,
+    	block,
+    	inline-block
+
+    	<p> is a block level element. 
+    	<span> is a inline element. 
+
+    opacity: This ranges from 0 to 1. 	(transparency)
+    			0 means 0% (totally transparent)
+    			1 means 100%	(totally opaque)
+
+
+    Hex color codes,
+    RGB Values 
+
+    font-weight:
+    	can take the numerical values (100, 200, 300, ... 900)
+    	Or can have some text as values:
+    		'normal', 'bold', etc
+
+
+    Box-Model:
+    	- This is the heart of CSS. 
+    	- All HTML elements can be considered as a box (we can give it a border to see the box)
+
+    	Various box related css-properties:
+    		border: this is the border of the box
+    		padding: this is the spacing between the content of the box, and the border of the box
+    		margin: this is the space outside the border of a box... 
+    		width: Width of the box (upto the border)
+    		height: height of the box (upto border)
+
+
+    	padding: 10px 20px 30px 40px;	// top right bottom left
+    	padding: 10px 20px 30px;	// top/bottom right left
+    	padding: 10px 20px;				//top/bottom   right/left
+    	padding: 10px;				//top/bottom/right/left;
+
+    	margin: 0 auto;	//margin of top and bottom is 0. And margin of left and right is equal... 
+    	
+
+Day 6:
+================
+	webFonts:
+		@font-face {
+			font-family: <customFontName>;
+			url: <font-file-path>
+		}
+
+		p, a {
+			font-family: <customFontName>
+		}
+
+
+	user-agent-stylesheet: This is the default list of styles which the browser applies on our html. 
+
+	Usually the frontend developers want to reset the default margin and padding to start with. For that they add a style
+	*{
+		margin: 0;
+		padding: 0;
+	}
+
+
+	display:  none; totally removes the element from the webpage (even the width and height disappears..)
+	visibility: none; just hides the box. 
+
+
+
+	box-sizing property:
+		-default value: "content-box"; What it means is that the width and the height we specify will be applied to the 'content' of the box. Padding and border-width will take up the extra space additionally. This may be problematic for some devlopers. 
+
+		-box-sizing: border-box;
+			when we apply this property, the width and height is seen with respect to the border (and not wrt content). If we apply this property, we should ensure that our calculations are consistent. 
+			i.e height = (space of the content) +  (space of the padding top + space of the padding bottom ) + (space of the border top + space of the border bottom)  [Common sense] 
+			Similarly for width.
+
+			If we don't ensure the consistency of these calcuations, then the browser may render the box in an ambigous manner.
+
+
+	CSS Positioning:
+		This property is used to place the element at a different location that its normal position. 
+
+		position: relative;  ->
+			This value allows you to position an element relative to its default static position on the web page.
+
+		position: absolute; ->
+			When an element’s position is set to absolute, all other elements on the page will ignore the element and act like it is not present on the page. The element will be positioned relative to its closest positioned parent element, while offset properties can be used to determine the final position from there. 
+
+
+		position: fixed; 
+			When an element’s position is set to absolute, as in the last exercise, the element will scroll with the rest of the document when a user scrolls.
+
+			We can fix an element to a specific position on the page (regardless of user scrolling) by setting its position to fixed, and accompanying it with the familiar offset properties top, bottom, left, and right.
+
+		This is the most difficult part of the CSS to understand. this will only come by practice. 
+
+
+	Block level elements:
+	    - They always start from a new line. 
+	    - They take up the full width available (stretches out to the left and right as far as it can)
+	    eg: div, p, h1, h2, ..etc
+
+  	Inline level elements:
+	    - They doesn't start from a new line.
+	    - Only take up as much width as neccessary. 
+	      eg: span, a, img..etc
+
+
+=========================
+
+Javasript:	
+	Typescript is the strongly typed version of javascript. 
+
+	There is no relation b/w Java and Javascript. Don't confuse the names. Syntax is similar to C++..etc.. 
+
+	DataTypes:
+		Primitive data types:
+			Number, String, Boolean, Null, Undefined, Symbol
+
+		Derived/non-premitive data types: Objects
+
+		You don't have to memorize these methods. You can google them whenever you need. 
+
+  	All these are very fundamental concepts. Javascript is much deeper. Event loop, execution context, closures, debouncing ..etc..  I'll give you the resources to cover the advance concepts once we are done with the basics. .
+
+  	undefined is a special type. 
+  	null is a instance of object type. 
+
+  	give me 2 mins ..
+  	Is my voice proper now? 
+  	is my voice breaking? 
+  	My internet speed is good.. I'm not sure what's the issue..
+  	Let me rejoin.
+
+  	There are three ways to create a variable:
+  		//var name = "Himansh";	 // this is the old way to create. No one uses this now. 
+  		
+
+  		let name = "Rock Interview";
+  		const salary = "20k";	
+
+  		const once initialized, can't be changed. (const is also block scoped)
+  		Variables declared using let can be changed. 
+  		let is block scoped, var is not. 
+
+  		ES -> Ecmascript.
+  		Ecmascript is the official standard for javascript. 
+
+  		Javascript runs on javascript engine. Eg: Chrome browser using v8 engine to run js. NodeJs also used v8. 
+  		Firefox uses "SpiderMonkey" js engine. 
+
+  		It is possible that each engine interprets different keywords differently. That's why there was a need to standarize the language. A standard(set of rules) was created -> Ecmascript. 
+  		Ecmascript === javscript; 
+  		ES6 means 2015 version of the ecmascript. 
+
+  		Template literals:
+  			console.log(`My favorite animal is ${favoriteAnimal} and he is ${animalAge} years old.`);
+
+
+  		block scoped means that the scope (the place where it can be accessed) is limited to the block it is declared within. So let is block scoped whereas var is not. 
+
+
+  	Coercion: So basically in javascript, values are coerced. What it means is that they are dynamically typecasted. 
+  		1 + true; 	// what will be the output?
+
+  			1 + 2;
+			3
+			1 + '1';
+			'11'
+			A number cannot be added to a string right.. so in this case, 1 was coerced (i.e converted) to a string... 
+			this is equivalent to '1' + '1' = '11';
+
+			In all the programming lanauges, true is considered as 1, and false is considered as 0; 
+			1 + true;
+			2
+			true will be converted to 1, and it's equivalent to 1 + 1
+			1 + false;
+			1
+			true + true;
+			2
+			1 + {};
+			'1[object Object]'
+			{} is coerced into a string.. 
+			String({});
+			'[object Object]'
+			1 + {};
+			In this case, {} is converted to a string, (i.e [object Object]), and hence 1+{} returned 1[object Object];
+			and actually javasscript is a very weird language.. so one cannot ever prefict the exact output of such weird expressions..
+			in real projects, you'll never add a objectd to a integer..
+
+
+			https://stackoverflow.com/a/57310111/1728869
+			(this is towards the advance part of js. It also talks about coercion.)
+
+
+		whenever we have a || b; and if a is true, then there is no need to check b right, we can directly return true..  Any doubt in this? This is very important.. so ask doubts if needed..
+
+		Similary in case of &&, a && b, if a is false, then no need to check b, we can directly return false.
+
+
+		false || false || false || 0 || 763;	//what will be the output? 
+		234 || 100; 						//	what will be the output? 
+		Has everyone understood this behavior? just comment 'yes' in the chat if understood.
+
+
+
+		function greetWorld(arg1, arg2){
+		  // function body
+		}
+
+		const greetWorld = (arg1, arg2) => {
+		  //this is the arrow notation
+		};
+
+		// if we have a single argument we can omit the parenthesis
+		const greetWorld = arg1 => {
+
+		}
+
+		// if the function body is empty and we are simply returning value of an expression, we can omit curly braces as we
+		const addFiveToTheNumber = num => num+5;
+
+		// These are four ways one can write functions.
+
+
+
+		Types of programming languages:
+			i) 		
+				-> Interpreted language, 
+				-> Compiled language
+
+			ii)
+				-> Declarative languages
+				-> Imperative languages
+
+			iii) 
+				-> Strongly typed (typed)
+				-> loosely typed (untyped)
+
+		So javascript is loosely typed language. We don't specifiy the types. The javascript engine figures that out dynamically.. 
+=============================================================================================================================
+
+
+Note:
+	You don't have to memorize all these tags. Whenever you need them, you can look it up online.. 
+
+Doubts:
+	After finishing the CSS exercises, we'll create a menu and a submenu, and style it. 
