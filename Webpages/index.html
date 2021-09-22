@@ -2,314 +2,65 @@
 	<head>
 		<!-- This is an example of external style sheet -->
 		<link rel="stylesheet" href="./index.css" />
+		<script>
+			let colors = ["red", "blue", "brown", "green", "gray", "pink", "skyblue", "violet", "darkgreen"];
+			let ourImage = document.getElementById("ourImage");
+			let intervalId = null;
+			// function startAutomaticColorChanging(){
+			// 	setInterval(function(){
+			// 		let randomIndex = Math.floor(Math.random()*(colors.length-1)); // this will generate a random number b/w 0 to 8. 
+			// 		let newBorderColor = colors[randomIndex];	//now newBorderColor will be a random color picked from our colors array.
+	
+			// 		ourImage.style.border = `50px solid ${newBorderColor}`;
+			// 	}, 500);
+			// }
+
+			function onImageHover(){
+				console.log("Image hover called");
+				// after every 2000 milliseconds I'm toggling the class 'dim' on our image.
+				intervalId = setInterval(function(){
+					let ourImage = document.getElementById("ourImage");
+					ourImage.classList.toggle("dim");
+				}, 200);
+
+				// in the above line we are setting an regular interval right.. so this setInterval function returns an intervalId.. 
+			}
+
+			function onImageOut(){
+				console.log("Image out called");
+				clearInterval(intervalId);
+			}
+			
+			function startAnimation(){
+				// start the blinking
+				onImageHover();
+
+				//wrap the image inside a marquee
+				let ourImage = document.getElementById("ourImage");
+				let marqueeElement = document.createElement("marquee");	// create a marquee element
+				marqueeElement.setAttribute('id', 'ourMarquee');
+				marqueeElement.appendChild(ourImage); 	// append our image to the marquee element
+				document.body.prepend(marqueeElement);	// append the marquee element to the document.body
+			}
+
+			function stopAnimation(){
+				//stop the blinking
+				onImageOut();
+
+				//stop the marquee
+				// let ourMarquee = document.getElementById("ourMarquee");
+				let ourMarquee = document.getElementsByTagName("marquee")[0];
+				ourMarquee.stop();
+			}
+		</script>
 	</head>
 
 	<body>
-
-		<p class="firstPara">
-			This is a paragraph 
-		</p>
-
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-		<p>This is another paragraph</p>
-				
-
+		<img src="img1.jpg" id="ourImage"/>
+		<button onclick="startAnimation()">Start</button>
+		<button onclick="stopAnimation()">Stop</button>
 	</body>	
+
 </html>
 
 

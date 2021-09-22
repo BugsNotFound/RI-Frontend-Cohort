@@ -1,8 +1,10 @@
+#ourImage {
+	border: 50px solid red;
+	/* height: 1000px;
+	width: 1000px; */
+	opacity: 1;
+}
 
-.firstPara {
-	background:  gray;
-	padding:  5px;
-	width:  100%;
-	position:  fixed;
-	bottom:  0px;
+.dim {
+	opacity: 0.5 !important;
 }

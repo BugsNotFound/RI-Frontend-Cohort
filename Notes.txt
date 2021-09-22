@@ -516,6 +516,28 @@ Javasript:
 				-> loosely typed (untyped)
 
 		So javascript is loosely typed language. We don't specifiy the types. The javascript engine figures that out dynamically.. 
+
+
+		========
+		DOM:
+			Browser exposes methods and objects as apis to javascript to manipulate the DOM tree. 
+			Using the DOM apis exposed to javascript, we can manipulate the DOM elements of a webpage...
+
+
+			getElementById:
+				We can give id to a element and retreive it in javascript using document.getElementById(<id>) method.
+
+			getElementsByClassname
+
+			getElementsByTagName
+
+
+		innerHTML:
+			We can use this property to change the innerHTML of a element.
+
+
+			I've just giving you the overview. Once you make a project (I'll share a resource for that) you'll automatically get an understanding of it. 
+
 =============================================================================================================================
 
 
