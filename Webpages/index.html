@@ -6,6 +6,9 @@
 			let colors = ["red", "blue", "brown", "green", "gray", "pink", "skyblue", "violet", "darkgreen"];
 			let ourImage = document.getElementById("ourImage");
 			let intervalId = null;
+			let intervalId2 = null;
+			let direction = 1;
+			let timeInterval = 500;	//this is in milliseconds
 			// function startAutomaticColorChanging(){
 			// 	setInterval(function(){
 			// 		let randomIndex = Math.floor(Math.random()*(colors.length-1)); // this will generate a random number b/w 0 to 8. 
@@ -31,26 +34,52 @@
 				clearInterval(intervalId);
 			}
 			
+			function setMotion(){
+				let ourImage = document.getElementById("ourImage");
+				if(ourImage.style.left === ''){
+					ourImage.style.left = '0px';
+				}
+				console.log(ourImage);
+				intervalId2 = setInterval(function(){
+					let currentLeft = ourImage.style.left;
+					let currentLeftInt = parseInt(currentLeft.substr(0, currentLeft.length-2));
+					ourImage.style.left = (currentLeftInt + direction) + "px"; // 1px 2px 3px.... so on and so forth
+					if(currentLeftInt + 50 + ourImage.width + 50 >= window.innerWidth){
+						direction = -1;
+					}
+					else if(currentLeftInt <= 0){
+						direction = 1;
+					}
+				}, timeInterval);
+			}
+
 			function startAnimation(){
 				// start the blinking
 				onImageHover();
+				setMotion();
+			}
 
-				//wrap the image inside a marquee
-				let ourImage = document.getElementById("ourImage");
-				let marqueeElement = document.createElement("marquee");	// create a marquee element
-				marqueeElement.setAttribute('id', 'ourMarquee');
-				marqueeElement.appendChild(ourImage); 	// append our image to the marquee element
-				document.body.prepend(marqueeElement);	// append the marquee element to the document.body
+			function increaseSpeed(){
+				timeInterval-= 100;
+				clearInterval(intervalId2);
+				setMotion();
+				document.getElementById("speedDisplay").innerHTML = "The current time interval is: " + timeInterval;
+			}
+
+			function decreaseSpeed(){
+				timeInterval+= 100;
+				clearInterval(intervalId2);
+				setMotion();
+				document.getElementById("speedDisplay").innerHTML = "The current time interval is: " + timeInterval;
 			}
 
 			function stopAnimation(){
 				//stop the blinking
 				onImageOut();
 
-				//stop the marquee
-				// let ourMarquee = document.getElementById("ourMarquee");
-				let ourMarquee = document.getElementsByTagName("marquee")[0];
-				ourMarquee.stop();
+				//stop the interval
+				clearInterval(intervalId2);
+				clearInterval(intervalId);
 			}
 		</script>
 	</head>
@@ -59,6 +88,9 @@
 		<img src="img1.jpg" id="ourImage"/>
 		<button onclick="startAnimation()">Start</button>
 		<button onclick="stopAnimation()">Stop</button>
+		<button onclick="increaseSpeed()">Increase speed</button>
+		<button onclick="decreaseSpeed()">Decrease speed</button>
+		<p id="speedDisplay">The current time interval is: 500</p>
 	</body>	
 
 </html>
