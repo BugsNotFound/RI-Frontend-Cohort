@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<div id="rockInterview">
+
+		</div>
+		<!-- Below libraries needs to be added to access React object and ReactDOM object. -->
+		<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+		<script>
+
+			// We could have done the same thing using plain javasscript as well
+			// let headingChild = document.createElement("h1");
+			// headingChild.setAttribute("id", "myId");
+			// let textNode = document.createTextNode("Rock interview practice session");   
+			// headingChild.appendChild(textNode);	
+			// // now headingChild = <h1>Rock interview practice session </h1>
+
+			// document.getElementById("rockInterview").appendChild(headingChild);
+
+
+			ReactDOM.render(
+				React.createElement("ul", null, "[", /*#__PURE__*/React.createElement("li", null, "Hey"), ",", /*#__PURE__*/React.createElement("li", null, "There"), "]"),
+				document.getElementById("rockInterview")
+			);
+
+/*
+					HTML
+			HEAD			BODY
+									H1 (id="myId", text="This is a heading")
+*/
+
+			// ReactDOM.render(
+			// 	React.createElement("h1", {
+			// 		id: "myId"
+			// 	}, "This is a heading 2"),
+			// 	document.getElementById("rockInterview")
+			// );
+
+				/*
+					HTML
+				HEAD		BODY
+									H1 (id="myId" text="This is a heading 2")
+				*/
+
+			// First React-Js wil create a virtual DOM (It won't be reflected on the screen immediately).. 
+			// Rendering on the webpage is a heavy operation. So before rendering anything, reactJs ensures that it doesn't render unneccessarily.
+
+		</script>
+	</body>
+</html>
+
+<!-- This is the purent react code you'll see. We have not mixed babel into this. We've used react in the most pure manner. -->
+
+<!-- Just go through the above code and absorb it. Ask me any doubts after going through it. I'll be back in 2-3 mins. -->
+
+<!-- Whatever that is being done by reactJs can be done by plain javascript as well. Just that reactJs makes our work a lot more simpler. -->

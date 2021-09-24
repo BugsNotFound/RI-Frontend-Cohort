@@ -1,0 +1,11 @@
+Whenever we render something on the webpage, react-js first makes the update in the virtual DOM. (Vritual DOM just means DOM Tree which is stored in the memory. 
+And since it's stored in the memory, it's faster to makeschanged to it). 
+So whenever react renders anything on the webpage, it compares the old dom with the new virtal dom. Then it makes only the neccessary changes in the webpage. 
+It used an algorithem called 'diffing algorithm'. Using the diffing algorithm reactJs finds out the differences b/w the two doms.. 
+
+
+
+We can only inject js expressions within jsx (by using {}). if, while..etc aren't javascript expressions. That is why we can't inject it into our jsx code.
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
